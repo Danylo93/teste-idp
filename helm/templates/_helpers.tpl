@@ -22,6 +22,6 @@ app.kubernetes.io/name: {{ include "app.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/environment: {{ required "app.environment is required" .Values.app.environment }}
 app.kubernetes.io/managed-by: Helm
-owner: {{ default "unknown" .Values.labels.owner }}
-tier: {{ default "standard" .Values.labels.tier }}
+owner: {{ default "unknown" .Values.labels.owner | replace ":" "-" | replace "/" "-" | trunc 63 | trimSuffix "-" | quote }}
+tier: {{ default "standard" .Values.labels.tier | quote }}
 {{- end }}
