@@ -67,3 +67,9 @@ secret:
 
 serviceAccount:
   enabled: false
+
+secret:
+  enabled: false
+
+serviceAccount:
+  enabled: false
