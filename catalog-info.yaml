@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: user-service-java
+  description: ms de teste
+  annotations:
+    github.com/project-slug: Danylo93/teste-idp
+    backstage.io/kubernetes-label-selector: 'app=user-service-java'
+  tags:
+    - nodejs
+    - microservice
+  links:
+    - url: https://github.com/Danylo93/teste-idp
+      title: Repository
+      icon: github
+    - url: https://github.com/Danylo93/teste-idp/actions
+      title: CI/CD Pipeline
+      icon: dashboard
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:default/guest
+  system: platform
+
